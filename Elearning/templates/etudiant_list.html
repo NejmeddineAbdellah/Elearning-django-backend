@@ -1,0 +1,64 @@
+<!-- ||||||||||||||||||||||||||||||||||||||||||||||||| -->
+<!DOCTYPE>
+<html>
+<head>
+  <title>Etudiant</title>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"/>
+<link rel = "stylesheet" type = "text/css" href = "https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css"/>
+
+</head>
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand">Etudiant</a>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
+</br>
+  <div class="addEtudiant">
+      <span><a href="/addnew" class="btn btn-primary">Add New Record</a></span>
+  </div>
+     <div class="table-responsive">
+  <table id="bootstrapdatatable" class="table table-striped table-bordered" width="100%">
+      <br>
+    <thead>
+
+            <th><input type="checkbox" id="checkall" /></th>
+            <th>ID</th>
+            <th>Employee Name</th>
+            <th>Employee Email</th>
+            <th>Edit Delete</th>
+
+    </thead>
+    <tbody>
+        {% for etudiant in etudiants %}
+        <tr>
+        <td>{{etudiant.id}}</td>
+        <td>{{etudiant.nom}}</td>
+        <td>{{etudiant.prenom}}</td>
+        <td>{{etudiant.email}}</td>
+
+             <td>
+             <a href="/EditEtudiant/{{ etudiant.id }}" class="btn btn-primary">Edit</a>
+             <a href="/delete/{{ etudiant.id }}" class="btn btn-danger">Delete</a>
+             </td>
+      </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+     </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src = "https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#bootstrapdatatable').DataTable({
+      "aLengthMenu": [[3, 5, 10, 25, -1], [3, 5, 10, 25, "All"]],
+        "iDisplayLength": 3
+       }
+    );
+} );
+</script>
+</body>
+</html>

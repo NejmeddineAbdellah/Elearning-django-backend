@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for inscription in inscriptions %}
+    <h2>{{ inscription.etudiant.nom }}</h2>
+    <p>{{ inscription.cours.nom }}</p>
+{% endfor %}
+</body>
+</html>

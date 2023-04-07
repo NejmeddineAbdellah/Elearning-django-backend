@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"/>
+<link rel = "stylesheet" type = "text/css" href = "https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css"/>
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<div class="col-md-12">
+      <form method="POST" class="post-form" action="/update/{{etudiant.id}}">
+    {% csrf_token %}
+    <div class="container">
+        <div class="col-12">
+            <h3>Update Details</h3>
+        </div>
+        <div class="mb-3">
+            <label>Etudiant ID:</label>
+            <input type="text" class="form-control" name="id" id="id_id" required maxlength="20" value="{{ etudiant.id }}"/>
+        </div>
+        <div class="mb-3">
+            <label>Nom :</label>
+            <input type="text" class="form-control" name="nom" id="id_nom" required maxlength="100" value="{{ etudiant.nom }}" />
+        </div>
+        <div class="mb-3">
+            <label>Prenom:</label>
+            <input type="text" class="form-control" name="prenom" id="id_prenom" required maxlength="254" value="{{ etudiant.prenom }}" />
+        </div>
+        <div class="mb-3">
+            <label>Email:</label>
+            <input type="email" class="form-control" name="email" id="id_email" required maxlength="15" value="{{ etudiant.email }}" />
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-success btn-lg">Update</button>
+        </div>
+    </div>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src = "https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></scri
+</body>
+</html>

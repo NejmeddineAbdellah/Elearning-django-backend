@@ -1,0 +1,49 @@
+<!DOCTYPE>
+<html>
+<head>
+  <title>cour</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand">Cour</a>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
+</br>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+
+        <th scope="col">id</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Malade</th>
+        <th scope="col">date</th>
+        <th scope="col">action</th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+        {% for patient in patients %}
+        <tr>
+        <td>{{patient.id}}</td>
+        <td>{{patient.nom}}</td>
+        <td>{{patient.maladie}}</td>
+        <td>{{patient.date}}</td>
+
+        <td>
+          <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
+          <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
+        <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+        </td>
+      </tr>
+        {% endfor %}
+
+
+    </tbody>
+  </table>
+</body>
+</html>
